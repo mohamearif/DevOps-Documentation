@@ -117,11 +117,13 @@ git push -u origin main
 git remote -v
 ```
 
-### 8. Optional – Work with Branches
+### 8. Work with Branches (Feature Development Flow)
+To make isolated updates or build new components, create and switch to a **feature branch**:
 ```bash
 git checkout -b feature/new-component
-# make your edits
 ```
+
+Make your changes and commit them as you go.  
 If you’re modifying unlocked package components, create a **new minor version** before committing.  
 Since your current version is **0.1.0**, the next logical minor version should be **0.2.0**.
 
@@ -284,11 +286,26 @@ sf package install --package "MyApp@0.3.0-1" --wait 10 --noprompt --target-org d
 sf org open --target-org depScratch
 ```
 
+### 9️⃣ Commit and Push to Feature Branch
+After successful validation, commit and push your **MyApp** updates to the same feature branch created earlier:
+```bash
+git add .
+git commit -m "Added dependent People package and Project__c reference changes"
+git push origin feature/new-component
+```
+
+### 🔟 Create a Pull Request
+Go to your GitHub **MyApp** repository → you’ll see a prompt to create a **Pull Request**.  
+Click **Compare & pull request**, review your changes, and submit the PR to merge `feature/new-component` → `main`.
+
+---
+
 ### ✅ Summary
 - **People** → separate package/repo.  
 - **MyApp** → depends on People.  
 - **Project__c** → links Contact and shows Nick Name.  
-- Install order: People then MyApp.
+- Continue work under `feature/new-component`, push changes, and open a PR to `main`.  
+- Install order: People → MyApp.
 
 </details>
 
