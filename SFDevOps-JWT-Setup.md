@@ -150,8 +150,8 @@ Now that JWT works locally, store your credentials securely for automation.
 | Secret | Description |
 |:--|:--|
 | `SF_JWT_KEY` | Content of your `server.key` (private key) |
-| `SF_CLIENT_ID_DEV` | Connected App’s Consumer Key |
-| `SF_USERNAME_DEV` | Integration user’s username |
+| `SF_CLIENT_ID_DEVHUB` | Connected App Client ID for the Dev Hub (org that owns the 2GP packages) |
+| `SF_USERNAME_DEVHUB` | Integration user email for the Dev Hub |
 
 3. Repeat for other environments (QA, UAT, Staging, Prod), e.g.:
 ```
